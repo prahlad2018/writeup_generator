@@ -1,0 +1,20 @@
+PIM# - PIM-153273
+Issue Description : In Release 29, users observed an issue where navigating between the income and summary pages triggered a null pointer exception (NPE). This occurred when an optional flag related to income eligibility was not set correctly.
+
+Expected system behavior: users should not face an issue where navigating between the income and summary pages and system triggered a null pointer exception 
+Current system behavior: users is facing an issue where navigating between the income and summary pages and system triggered a null pointer exception 
+root cause: A null check was missing in the backend Spring Boot service that updates income summary flags. The code incorrectly assumed the flag would always be initialized, resulting in a runtime exception.
+RCA Validation:Code review confirmed the absence of the null check. A test environment replication using a specific member RefId (9990012345) successfully reproduced the error. Logs validated this RefId triggered the exception.
+
+Issue Summary:
+In Release 29, users observed an issue where navigating between the income and summary pages triggered a null pointer exception (NPE). This occurred when an optional flag related to income eligibility was not set correctly.
+
+Detection:
+The issue was first detected in production by the operations monitoring team on July 10, 2025, after multiple member complaints and log review in Dynatrace.
+
+Root Cause:
+A null check was missing in the backend Spring Boot service that updates income summary flags. The code incorrectly assumed the flag would always be initialized, resulting in a runtime exception.
+
+RCA Validation:
+Code review confirmed the absence of the null check. A test environment replication using a specific member RefId (9990012345) successfully reproduced the error. Logs validated this RefId triggered the exception.
+
