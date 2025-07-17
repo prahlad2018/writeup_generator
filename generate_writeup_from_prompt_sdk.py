@@ -11,7 +11,7 @@ from openai import OpenAI
 # --- Configuration ---
 TEMPLATE_PATH = "C:/Users/ishit/OneDrive/Documents/Python/writeup_generator/Writeup_template.docx"
 PROMPT_PATH = "C:/Users/ishit/OneDrive/Documents/Python/writeup_generator/issue_prompt.txt"
-API_KEY = "sk-proj-KEb4lIXwtqmAWvTjFiopT3BlbkFJ1Tz1czD1ICzEv5ADBRDh"  # Replace with your actual API key
+API_KEY = ""  # Replace with your actual API key
 
 client = OpenAI(api_key=API_KEY)
 
